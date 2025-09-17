@@ -61,3 +61,23 @@ Scores appear in the **Model Status** panel.
 - If AutoML unavailable, install:
   ```bash
   pip install auto-sklearn tpot
+
+To reset, simply reload your data file.
+
+
+---
+
+### 3️⃣ Developer Guide (`docs/developer-guide.md`)
+
+```markdown
+# Developer Guide
+
+## Requirements
+- Python ≥3.9
+- Tkinter (usually bundled)
+- Pandas, Numpy, Matplotlib, scikit-learn
+- Optional: auto-sklearn, tpot
+
+Install:
+```bash
+pip install -r requirements.txt
