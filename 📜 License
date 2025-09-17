@@ -1,0 +1,63 @@
+
+---
+
+### 2️⃣ User Guide (`docs/user-guide.md`)
+
+```markdown
+# Business Analyst GUI – User Guide
+
+## 1. Launching the App
+- Run `python business_analyst_app.py`.
+- The main window opens with four tabs:
+  1. Data
+  2. Clean/Transform
+  3. Visualize
+  4. Model
+
+---
+
+## 2. Working with Data
+- **Open CSV/Excel**: Click → select file → preview shows first 500 rows.
+- **Save Current View**: Export the filtered dataframe.
+
+---
+
+## 3. Cleaning & Transformation
+| Action | How |
+|--------|-----|
+| Drop rows with nulls | `Drop rows with nulls` button |
+| Fill NA | Choose *mean / median / mode / constant*, then `Apply Fill` |
+| Drop column | Pick from dropdown → `Drop` |
+| Remove outliers | Choose numeric column → `Apply IQR Filter` |
+| Row filter | Enter `Quantity > 10 & Region == "East"` → `Apply Row Filter` |
+| Computed column | Provide name + formula → `Create` |
+| Groupby | Enter group columns + aggregations, e.g. `Region,Category` & `Sales:sum` |
+
+---
+
+## 4. Visualization
+- Select chart type (bar, line, hist, scatter).  
+- Choose X/Y columns.  
+- Click **Plot**.
+
+---
+
+## 5. Modeling
+1. Choose target column.
+2. Task:
+   - `auto` (infers regression/classification)
+   - or manual.
+3. Train:
+   - Baseline → fast Logistic/Linear model.
+   - AutoML → auto-sklearn or TPOT (if installed).
+
+Scores appear in the **Model Status** panel.
+
+---
+
+## 6. Tips & Troubleshooting
+- “Filter error” → check Python syntax in query.
+- For large files (>500 rows), only preview is truncated — operations still run on full data.
+- If AutoML unavailable, install:
+  ```bash
+  pip install auto-sklearn tpot
